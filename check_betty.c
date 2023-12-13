@@ -4,12 +4,12 @@
  * new_main - for entry point
  *
  * Return: 0
- */
+ *
 
 int main(void)
 {
 	return (custom_main());
-}
+}*/
 
 /**
  * custom_main - entry level for custom main

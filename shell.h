@@ -114,9 +114,139 @@ typedef struct builtin
 /* endy_test_betty.c */
 void printMessage(void);
 int custom_main(void);
-int main(void);
 void __putchar(char c);
 
+/* endy_history_instruct.c   */
+char *get_history_file(info_t *info);
+int write_history(info_t *info);
+int read_history(info_t *info);
+int build_history_list(info_t *info, char *buf, int linecount);
+int renumber_history(info_t *info);
 
+/* endy_parser_instruct.c */
+char *find_path(info_t *, char *, char *);
+char *dup_chars(char *, int, int);
+int is_cmd(info_t *, char *);
+
+/* endy_variable_envruntime.c */
+char *_getenv(info_t *, const char *);
+int _myenv(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *);
+int populate_env_list(info_t *);
+
+/* endy_reader_envruntime.c */
+char **get_environ(info_t *);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+
+/* endy_err_controller.c */
+int _eputchar(char);
+int _putsfd(char *str, int fd);
+void _eputs(char *);
+int _putfd(char c, int fd);
+
+/* endy_da_shelliterationloops.c */
+int find_builtin(info_t *);
+void find_cmd(info_t *);
+int hsh(info_t *, char **);
+void fork_cmd(info_t *);
+
+/* endy_stringservice_utilities.c */
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+/* endy_loophsh.c */
+int loophsh(char **);
+
+/* endy_stringmodifier.c */
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *starts_with(const char *, const char *);
+char *_strcat(char *, char *);
+
+/* endy_customtokenizingfunction.c */
+char **strtow(char *, char *);
+char **strtow2(char *, char);
+
+/* endy_exit_endfunction.c */
+char *_strncpy(char *, char *, int);
+char *_strncat(char *, char *, int);
+char *_strchr(char *, char);
+
+/* endy_num_valueconverter.c */
+int interactive(info_t *);
+int is_delim(char, char *);
+int _isalpha(int);
+int _atoi(char *);
+
+/* endy_extradynamicmomery.c */
+char *_memset(char *, char, unsigned int);
+void ffree(char **);
+void *_realloc(void *, unsigned int, unsigned int);
+
+/* endy_memorymanager.c */
+int bfree(void **);
+
+/* endy_errservice_utilities.c */
+int _erratoi(char *);
+void print_error(info_t *, char *);
+int print_d(int, int);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
+
+/* endy_da_shellinstructutilities.c */
+int _myhistory(info_t *);
+int _myalias(info_t *);
+
+/* endy_da_shellinstrust.c */
+int _myexit(info_t *);
+int _mycd(info_t *);
+int _myhelp(info_t *);
+
+/* endy_inputsourcereader.c */
+ssize_t get_input(info_t *);
+int _getline(info_t *, char **, size_t *);
+void sigintHandler(int);
+/* endy_inforetriever.c */
+void clear_info(info_t *);
+void set_info(info_t *, char **);
+void free_info(info_t *, int);
+
+/* endy_referlist.c*/
+list_t *add_node(list_t **, const char *, int);
+list_t *add_node_end(list_t **, const char *, int);
+size_t print_list_str(const list_t *);
+int delete_node_at_index(list_t **, unsigned int);
+void free_list(list_t **);
+
+/* endy_listHelper.c */
+size_t list_len(const list_t *);
+char **list_to_strings(list_t *);
+size_t print_list(const list_t *);
+list_t *node_starts_with(list_t *, char *, char);
+ssize_t get_node_index(list_t *, list_t *);
+
+/* endy_varmanager*/
+int is_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
+int replace_alias(info_t *);
+int replace_vars(info_t *);
+int replace_string(char **, char *);
+
+/* endy_moreFunctions 
+static int copy_word(char *str, int i, char *d, char **s);
+static char **allocate_strings(int numwords);
+static int count_words(char *str, char d);*/
+
+/*Renamed*/
+int free_and_null(void **ptr);
+/*Main.c
+void initialize_info(info_t *info);
+int process_file_arguments(info_t *info, char *filename, int ac, char **av);
+void setup_shell_environment(info_t *info);
+int main(int ac, char **av);*/
 
 #endif /*shell_h */
