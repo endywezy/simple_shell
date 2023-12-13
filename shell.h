@@ -114,7 +114,7 @@ typedef struct builtin
 /* endy_test_betty.c */
 void printMessage(void);
 int custom_main(void);
-void __putchar(char c);
+int __putchar(char c);
 
 /* endy_history_instruct.c   */
 char *get_history_file(info_t *info);
@@ -146,7 +146,7 @@ int _putsfd(char *str, int fd);
 void _eputs(char *);
 int _putfd(char c, int fd);
 
-/* endy_da_shelliterationloops.c */
+/* endy_m_shelliterationloops.c */
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 int hsh(info_t *, char **);
@@ -197,11 +197,11 @@ int print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
-/* endy_da_shellinstructutilities.c */
+/* endy_m_shellinstructutilities.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
-/* endy_da_shellinstrust.c */
+/* endy_m_shellinstrust.c */
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
@@ -241,4 +241,4 @@ int replace_string(char **, char *);
 int free_and_null(void **ptr);
 
 
-#endif /*shell_h */
+#endif /* SHELL_H */
