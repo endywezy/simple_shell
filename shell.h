@@ -210,6 +210,7 @@ int _myhelp(info_t *);
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
+
 /* endy_inforetriever.c */
 void clear_info(info_t *);
 void set_info(info_t *, char **);
@@ -222,7 +223,7 @@ size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
 
-/* endy_listHelper.c */
+/* endy_list_utility.c */
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
@@ -236,17 +237,8 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 
-/* endy_moreFunctions 
-static int copy_word(char *str, int i, char *d, char **s);
-static char **allocate_strings(int numwords);
-static int count_words(char *str, char d);*/
-
-/*Renamed*/
+/* endy_added prototype*/
 int free_and_null(void **ptr);
-/*Main.c
-void initialize_info(info_t *info);
-int process_file_arguments(info_t *info, char *filename, int ac, char **av);
-void setup_shell_environment(info_t *info);
-int main(int ac, char **av);*/
+
 
 #endif /*shell_h */
