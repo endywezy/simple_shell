@@ -1,17 +1,6 @@
 #include "shell.h"
 
 /**
- * new_main - for entry point
- *
- * Return: 0
- */
-
-int main(void)
-{
-	return (custom_main());
-}
-
-/**
  * custom_main - entry level for custom main
  *
  * Return: 0 success, 1 on err
