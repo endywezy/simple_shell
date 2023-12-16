@@ -7,8 +7,7 @@
  */
 int custom_main(void)
 {
-	printMessage();
-	
+	printMessage();	
 	return (0);
 }
 
